@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Motion Graphic UI/UX Showreel</title>
+  <style>
+    @keyframes gradientFlow {
+      0% { background: linear-gradient(135deg, #ff4e50, #bfa8ff); }
+      50% { background: linear-gradient(135deg, #bfa8ff, #d2f1ff); }
+      100% { background: linear-gradient(135deg, #ff4e50, #bfa8ff); }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      animation: gradientFlow 18s ease-in-out infinite;
+      background-size: 400% 400%;
+      font-family: 'Pretendard', 'Helvetica Neue', sans-serif;
+      color: #222;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* 상단 흰색 바만 남김 */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 10000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px 80px; /* nav 높이 60px 때문에 패딩 탑 100px 유지 */
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #444;
+      margin-bottom: 40px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn-scroll {
+      padding: 14px 28px;
+      background: #ff4e50;
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1em;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(255, 78, 80, 0.5);
+      transition: background 0.3s, transform 0.2s;
+      user-select: none;
+    }
+
+    .btn-scroll:hover {
+      background: #e94344;
+      transform: translateY(-3px);
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 120px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+    }
+
+    .video-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      max-width: 540px;
+      width: 100%;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .sound-toggle {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.85);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      transition: background 0.2s;
+    }
+
+    .sound-toggle:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+
+    .text {
+      flex: 1;
+      padding: 20px 30px;
+      min-width: 280px;
+      border-radius: 12px;
+      background-color: transparent;
+    }
+
+    .section h2 {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+      color: #111;
+    }
+
+    .section p {
+      font-size: 1em;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #666;
+      font-size: 0.95em;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+      }
+
+      .video-container {
+        align-items: center;
+      }
+
+      .text {
+        padding: 20px 0;
+        width: 100%;
+      }
+
+      .button-group {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 흰색 상단 바만 남김 -->
+  <nav></nav>
+
+  <div class="container">
+    <header id="intro">
+      <h1>Motion Graphic UI/UX Showreel</h1>
+      <p>A professional showcase of interactive animations and interface design for e-commerce</p>
+      <div class="button-group">
+        <button class="btn-scroll" onclick="scrollToSection('branding')">Webtoon</button>
+        <button class="btn-scroll" onclick="scrollToSection('intro')">Intro</button>
+        <button class="btn-scroll" onclick="scrollToSection('uiux')">UI &amp; UX </button>
+      </div>
+    </header>
+
+    <!-- 영상 1 -->
+    <section class="section" id="uiux">
+      <div class="text">
+        <h2>01. 체리픽트 Intro Animation </h2>
+        <p>사용자의 상황에 맞는 식당과 메뉴를 빠르게 추천해주는 큐레이션푸드 앱으로  사용자 리서치를 통해 ‘음식’이 일상 속 행복감을 높이는 주요 요소임을 발견하고,메뉴 선택의 번거로움을 줄이기 위한 UX 설계를 반영했습니다.  
+        </p>
+      </div>
+      <div class="video-container">
+        <video id="video1" autoplay muted loop playsinline>
+          <source src="mp41.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <button class="sound-toggle" onclick="toggleSound('video1', this)">🔇</button>
+      </div>
+    </section>
+
+    <!-- 영상 2 -->
+    <section class="section">
+      <div class="text">
+        <h2>02. 슈매진 App Sceen Shot </h2>
+        <p> 모바일 앱으로 간편하게 세상에 단 하나뿐인 나만의 특별한 신발을 제작하고 
+            소중한 인연들에게 더 깊은 의미의 선물제공과 더불어 정보제공 및 커뮤니티 서비스와 배송기능을 더한 앱입니다.</p>
+      </div>
+      <div class="video-container">
+        <video id="video2" autoplay muted loop playsinline>
+          <source src="mp42.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <button class="sound-toggle" onclick="toggleSound('video2', this)">🔇</button>
+      </div>
+    </section>
+
+    <!-- 영상 3 -->
+    <section class="section" id="branding">
+      <div class="text">
+        <h2>03. 웹툰 Webtoon Intro Animation  </h2>
+        <p>
+
+
+            웹사이트 접속 시, 사용자를 환영하는 인트로 영상을 제공해서 웹툰의 주제나 분위기를 소개하고, 
+            사용자의 호기심을 자극하는 요소를 담은 인트로애니메이션입니다. </p>
+      </div>
+      <div class="video-container">
+        <video id="video3" autoplay muted loop playsinline>
+          <source src="111.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <button class="sound-toggle" onclick="toggleSound('video3', this)">🔇</button>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Designed by Chaerin Hwang — Motion & UI/UX Designer
+    </footer>
+  </div>
+
+  <script>
+    // 사운드 토글
+    function toggleSound(videoId, button) {
+      const video = document.getElementById(videoId);
+      video.muted = !video.muted;
+      button.textContent = video.muted ? "🔇" : "🔊";
+    }
+
+    // 부드러운 스크롤
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  </script>
+</body>
+</html>
